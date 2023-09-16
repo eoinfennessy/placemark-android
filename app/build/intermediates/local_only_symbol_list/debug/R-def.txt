@@ -1,13 +1,22 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+id appBarLayout
+id btnAdd
+id placemarkTitle
+id toolbarAdd
 layout activity_placemark
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string button_addPlacemark
+string hint_placemarkTitle
 style Base.Theme.Placemark
 style Theme.Placemark
 xml backup_rules
