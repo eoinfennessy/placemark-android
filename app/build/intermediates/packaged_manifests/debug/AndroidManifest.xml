@@ -28,7 +28,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.Placemark" >
         <activity
-            android:name="org.wit.placemark.MainActivity"
+            android:name="org.wit.placemark.PlacemarkActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

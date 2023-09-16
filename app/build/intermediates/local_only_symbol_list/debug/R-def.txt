@@ -4,7 +4,7 @@ color black
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-layout activity_main
+layout activity_placemark
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

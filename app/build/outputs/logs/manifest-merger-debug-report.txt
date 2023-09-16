@@ -28,6 +28,8 @@ MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/eoin/.gradle/cache
 MERGED from [androidx.customview:customview:1.1.0] /Users/eoin/.gradle/caches/transforms-3/0be8727bcc38f2239c2b80150a0554c4/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.9.0] /Users/eoin/.gradle/caches/transforms-3/738147d0f85917708540e295877f94a3/transformed/core-1.9.0/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.core:core-ktx:1.9.0] /Users/eoin/.gradle/caches/transforms-3/5491ac3847804173a46dcdec37a7c63f/transformed/core-ktx-1.9.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.github.ajalt:timberkt:1.5.1] /Users/eoin/.gradle/caches/transforms-3/b7f9a6a80eb44327d81d5083d3ad8308/transformed/timberkt-1.5.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/eoin/.gradle/caches/transforms-3/95d99b43139d52b1e5e0089352b4dc67/transformed/timber-4.7.1/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/eoin/.gradle/caches/transforms-3/b9beffc118fc2e25670b21ca5c5ba5bd/transformed/savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/eoin/.gradle/caches/transforms-3/70d510d1ea77f94adf002972dd3d1d16/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/eoin/.gradle/caches/transforms-3/eacdf1c4799ec81e06c84cb95a87a530/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -65,6 +67,8 @@ MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.core:core:1.9.0] /Users/eoin/.gradle/caches/transforms-3/738147d0f85917708540e295877f94a3/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
 MERGED from [androidx.core:core:1.9.0] /Users/eoin/.gradle/caches/transforms-3/738147d0f85917708540e295877f94a3/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/eoin/.gradle/caches/transforms-3/95d99b43139d52b1e5e0089352b4dc67/transformed/timber-4.7.1/AndroidManifest.xml:7:5-20
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/eoin/.gradle/caches/transforms-3/95d99b43139d52b1e5e0089352b4dc67/transformed/timber-4.7.1/AndroidManifest.xml:7:5-20
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/eoin/.gradle/caches/transforms-3/2fedbf8c74c9edc50a1bd4976a1d5f3e/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/eoin/.gradle/caches/transforms-3/2fedbf8c74c9edc50a1bd4976a1d5f3e/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/eoin/.gradle/caches/transforms-3/6e6d849a3ba8a9e54c13fc958700caef/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
@@ -93,12 +97,12 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/eoin/.gradle/caches/
 		ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:13:9-47
 	android:dataExtractionRules
 		ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:7:9-65
-activity#org.wit.placemark.MainActivity
+activity#org.wit.placemark.PlacemarkActivity
 ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:15:9-23:20
 	android:exported
 		ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:17:13-36
 	android:name
-		ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:16:13-41
+		ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:16:13-46
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
@@ -161,6 +165,10 @@ MERGED from [androidx.core:core:1.9.0] /Users/eoin/.gradle/caches/transforms-3/7
 MERGED from [androidx.core:core:1.9.0] /Users/eoin/.gradle/caches/transforms-3/738147d0f85917708540e295877f94a3/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core-ktx:1.9.0] /Users/eoin/.gradle/caches/transforms-3/5491ac3847804173a46dcdec37a7c63f/transformed/core-ktx-1.9.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.9.0] /Users/eoin/.gradle/caches/transforms-3/5491ac3847804173a46dcdec37a7c63f/transformed/core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [com.github.ajalt:timberkt:1.5.1] /Users/eoin/.gradle/caches/transforms-3/b7f9a6a80eb44327d81d5083d3ad8308/transformed/timberkt-1.5.1/AndroidManifest.xml:7:5-43
+MERGED from [com.github.ajalt:timberkt:1.5.1] /Users/eoin/.gradle/caches/transforms-3/b7f9a6a80eb44327d81d5083d3ad8308/transformed/timberkt-1.5.1/AndroidManifest.xml:7:5-43
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/eoin/.gradle/caches/transforms-3/95d99b43139d52b1e5e0089352b4dc67/transformed/timber-4.7.1/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/eoin/.gradle/caches/transforms-3/95d99b43139d52b1e5e0089352b4dc67/transformed/timber-4.7.1/AndroidManifest.xml:5:5-43
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/eoin/.gradle/caches/transforms-3/b9beffc118fc2e25670b21ca5c5ba5bd/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/eoin/.gradle/caches/transforms-3/b9beffc118fc2e25670b21ca5c5ba5bd/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/eoin/.gradle/caches/transforms-3/70d510d1ea77f94adf002972dd3d1d16/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
