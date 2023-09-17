@@ -98,12 +98,12 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/eoin/.gradle/caches/
 		ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:13:9-47
 	android:dataExtractionRules
 		ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:7:9-65
-activity#org.wit.placemark.PlacemarkActivity
+activity#org.wit.placemark.activities.PlacemarkActivity
 ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:15:9-23:20
 	android:exported
 		ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:17:13-36
 	android:name
-		ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:16:13-46
+		ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:16:13-57
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN

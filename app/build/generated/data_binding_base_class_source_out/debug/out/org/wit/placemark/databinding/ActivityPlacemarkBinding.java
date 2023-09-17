@@ -29,17 +29,22 @@ public final class ActivityPlacemarkBinding implements ViewBinding {
   public final Button btnAdd;
 
   @NonNull
+  public final EditText placemarkDescription;
+
+  @NonNull
   public final EditText placemarkTitle;
 
   @NonNull
   public final Toolbar toolbarAdd;
 
   private ActivityPlacemarkBinding(@NonNull ConstraintLayout rootView,
-      @NonNull AppBarLayout appBarLayout, @NonNull Button btnAdd, @NonNull EditText placemarkTitle,
+      @NonNull AppBarLayout appBarLayout, @NonNull Button btnAdd,
+      @NonNull EditText placemarkDescription, @NonNull EditText placemarkTitle,
       @NonNull Toolbar toolbarAdd) {
     this.rootView = rootView;
     this.appBarLayout = appBarLayout;
     this.btnAdd = btnAdd;
+    this.placemarkDescription = placemarkDescription;
     this.placemarkTitle = placemarkTitle;
     this.toolbarAdd = toolbarAdd;
   }
@@ -83,6 +88,12 @@ public final class ActivityPlacemarkBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.placemarkDescription;
+      EditText placemarkDescription = ViewBindings.findChildViewById(rootView, id);
+      if (placemarkDescription == null) {
+        break missingId;
+      }
+
       id = R.id.placemarkTitle;
       EditText placemarkTitle = ViewBindings.findChildViewById(rootView, id);
       if (placemarkTitle == null) {
@@ -96,7 +107,7 @@ public final class ActivityPlacemarkBinding implements ViewBinding {
       }
 
       return new ActivityPlacemarkBinding((ConstraintLayout) rootView, appBarLayout, btnAdd,
-          placemarkTitle, toolbarAdd);
+          placemarkDescription, placemarkTitle, toolbarAdd);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -2,5 +2,9 @@
     {
         "merged": "org.wit.placemark.app-mergeDebugResources-27:/layout/activity_placemark.xml",
         "source": "org.wit.placemark.app-main-30:/layout/activity_placemark.xml"
+    },
+    {
+        "merged": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-mergeDebugResources-27:/layout/activity_placemark.xml",
+        "source": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-main-30:/layout/activity_placemark.xml"
     }
 ]

@@ -3340,6 +3340,7 @@ int id pathRelative 0x7f08014c
 int id peekHeight 0x7f08014d
 int id percent 0x7f08014e
 int id pin 0x7f08014f
+int id placemarkDescription 0x7f0801f1
 int id placemarkTitle 0x7f080150
 int id position 0x7f080151
 int id postLayout 0x7f080152
@@ -3742,6 +3743,7 @@ int string exposed_dropdown_menu_content_description 0x7f0f002b
 int string fab_transformation_scrim_behavior 0x7f0f002c
 int string fab_transformation_sheet_behavior 0x7f0f002d
 int string hide_bottom_view_on_scroll_behavior 0x7f0f002e
+int string hint_placemarkDescription 0x7f0f00a1
 int string hint_placemarkTitle 0x7f0f002f
 int string icon_content_description 0x7f0f0030
 int string item_view_role_description 0x7f0f0031

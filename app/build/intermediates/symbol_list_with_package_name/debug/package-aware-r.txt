@@ -3341,6 +3341,7 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id placemarkDescription
 id placemarkTitle
 id position
 id postLayout
@@ -3743,6 +3744,7 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
+string hint_placemarkDescription
 string hint_placemarkTitle
 string icon_content_description
 string item_view_role_description
