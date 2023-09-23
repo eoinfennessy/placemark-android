@@ -3150,6 +3150,7 @@ int id decor_content_parent 0x7f08008e
 int id default_activity_button 0x7f08008f
 int id deltaRelative 0x7f080090
 int id dependency_ordering 0x7f080091
+int id description 0x7f0801f2
 int id design_bottom_sheet 0x7f080092
 int id design_menu_item_action_area 0x7f080093
 int id design_menu_item_action_area_stub 0x7f080094
@@ -3350,6 +3351,7 @@ int id progress_horizontal 0x7f080155
 int id radio 0x7f080156
 int id ratio 0x7f080157
 int id rectangles 0x7f080158
+int id recyclerView 0x7f0801f3
 int id reverseSawtooth 0x7f080159
 int id right 0x7f08015a
 int id rightToLeft 0x7f08015b
@@ -3616,6 +3618,8 @@ int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_placemark 0x7f0b001c
+int layout activity_placemark_list 0x7f0b006a
+int layout card_placemark 0x7f0b006b
 int layout custom_dialog 0x7f0b001d
 int layout design_bottom_navigation_item 0x7f0b001e
 int layout design_bottom_sheet_dialog 0x7f0b001f

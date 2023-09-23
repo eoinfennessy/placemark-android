@@ -9,10 +9,14 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 id appBarLayout
 id btnAdd
+id description
 id placemarkDescription
 id placemarkTitle
+id recyclerView
 id toolbarAdd
 layout activity_placemark
+layout activity_placemark_list
+layout card_placemark
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

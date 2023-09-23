@@ -20,9 +20,9 @@
 15-->[androidx.core:core:1.9.0] /Users/eoin/.gradle/caches/transforms-3/738147d0f85917708540e295877f94a3/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 16
 17    <application
-17-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:5:5-25:19
+17-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:5:5-29:19
 18        android:name="org.wit.placemark.main.MainApp"
-18-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:6:9-54
+18-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:6:9-37
 19        android:allowBackup="true"
 19-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:7:9-35
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -46,8 +46,8 @@
 30-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:14:9-47
 31        <activity
 31-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:16:9-24:20
-32            android:name="org.wit.placemark.activities.PlacemarkActivity"
-32-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:17:13-57
+32            android:name="org.wit.placemark.activities.PlacemarkListActivity"
+32-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:17:13-61
 33            android:exported="true" >
 33-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:18:13-36
 34            <intent-filter>
@@ -61,28 +61,35 @@
 37-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:22:27-74
 38            </intent-filter>
 39        </activity>
-40
-41        <provider
-41-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-42            android:name="androidx.startup.InitializationProvider"
-42-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
-43            android:authorities="org.wit.placemark.androidx-startup"
-43-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
-44            android:exported="false" >
-44-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
-45            <meta-data
-45-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-46                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-46-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
-47                android:value="androidx.startup" />
-47-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
-48            <meta-data
-48-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/eoin/.gradle/caches/transforms-3/2fedbf8c74c9edc50a1bd4976a1d5f3e/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-49                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-49-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/eoin/.gradle/caches/transforms-3/2fedbf8c74c9edc50a1bd4976a1d5f3e/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-50                android:value="androidx.startup" />
-50-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/eoin/.gradle/caches/transforms-3/2fedbf8c74c9edc50a1bd4976a1d5f3e/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-51        </provider>
-52    </application>
-53
-54</manifest>
+40        <activity
+40-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:25:9-28:20
+41            android:name="org.wit.placemark.activities.PlacemarkActivity"
+41-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:26:13-57
+42            android:exported="true" >
+42-->/Users/eoin/AndroidStudioProjects/Placemark/app/src/main/AndroidManifest.xml:27:13-36
+43        </activity>
+44
+45        <provider
+45-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+46            android:name="androidx.startup.InitializationProvider"
+46-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+47            android:authorities="org.wit.placemark.androidx-startup"
+47-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+48            android:exported="false" >
+48-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+49            <meta-data
+49-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+50                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+50-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+51                android:value="androidx.startup" />
+51-->[androidx.emoji2:emoji2:1.2.0] /Users/eoin/.gradle/caches/transforms-3/3ffd57255e6f9966dfb3d4f8b250b487/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+52            <meta-data
+52-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/eoin/.gradle/caches/transforms-3/2fedbf8c74c9edc50a1bd4976a1d5f3e/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+53                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+53-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/eoin/.gradle/caches/transforms-3/2fedbf8c74c9edc50a1bd4976a1d5f3e/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+54                android:value="androidx.startup" />
+54-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/eoin/.gradle/caches/transforms-3/2fedbf8c74c9edc50a1bd4976a1d5f3e/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+55        </provider>
+56    </application>
+57
+58</manifest>

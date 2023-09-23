@@ -1,19 +1,23 @@
 [
     {
+        "merged": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-merged_res-28:/layout_activity_placemark_list.xml.flat",
+        "source": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-main-30:/layout/activity_placemark_list.xml"
+    },
+    {
         "merged": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-merged_res-28:/mipmap-mdpi_ic_launcher.webp.flat",
         "source": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-main-30:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "org.wit.placemark.app-merged_res-28:/layout_activity_placemark.xml.flat",
-        "source": "org.wit.placemark.app-main-30:/layout/activity_placemark.xml"
-    },
-    {
-        "merged": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-merged_res-28:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-main-30:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "org.wit.placemark.app-merged_res-28:/layout_activity_placemark_list.xml.flat",
+        "source": "org.wit.placemark.app-main-30:/layout/activity_placemark_list.xml"
     },
     {
         "merged": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-merged_res-28:/mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-main-30:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-merged_res-28:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-main-30:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
         "merged": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-merged_res-28:/mipmap-anydpi_ic_launcher_round.xml.flat",
@@ -22,6 +26,10 @@
     {
         "merged": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-merged_res-28:/xml_data_extraction_rules.xml.flat",
         "source": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-main-30:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "org.wit.placemark.app-merged_res-28:/layout_card_placemark.xml.flat",
+        "source": "org.wit.placemark.app-main-30:/layout/card_placemark.xml"
     },
     {
         "merged": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-merged_res-28:/layout_activity_placemark.xml.flat",

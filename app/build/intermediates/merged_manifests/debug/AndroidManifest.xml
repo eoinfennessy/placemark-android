@@ -29,13 +29,17 @@
         android:testOnly="true"
         android:theme="@style/Theme.Placemark" >
         <activity
-            android:name="org.wit.placemark.activities.PlacemarkActivity"
+            android:name="org.wit.placemark.activities.PlacemarkListActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="org.wit.placemark.activities.PlacemarkActivity"
+            android:exported="true" >
         </activity>
 
         <provider
