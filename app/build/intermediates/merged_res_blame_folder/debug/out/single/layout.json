@@ -1,15 +1,15 @@
 [
     {
+        "merged": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-mergeDebugResources-27:/layout/card_placemark.xml",
+        "source": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-main-30:/layout/card_placemark.xml"
+    },
+    {
         "merged": "org.wit.placemark.app-mergeDebugResources-27:/layout/activity_placemark_list.xml",
         "source": "org.wit.placemark.app-main-30:/layout/activity_placemark_list.xml"
     },
     {
         "merged": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-mergeDebugResources-27:/layout/activity_placemark.xml",
         "source": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-main-30:/layout/activity_placemark.xml"
-    },
-    {
-        "merged": "org.wit.placemark.app-mergeDebugResources-27:/layout/card_placemark.xml",
-        "source": "org.wit.placemark.app-main-30:/layout/card_placemark.xml"
     },
     {
         "merged": "/Users/eoin/.gradle/daemon/8.0/org.wit.placemark.app-mergeDebugResources-27:/layout/activity_placemark_list.xml",

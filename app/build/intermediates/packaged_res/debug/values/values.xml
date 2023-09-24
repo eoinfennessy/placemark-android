@@ -9,6 +9,7 @@
     <string name="button_addPlacemark">Add Placemark</string>
     <string name="hint_placemarkDescription">Enter Placemark Description</string>
     <string name="hint_placemarkTitle">Enter Placemark Title</string>
+    <string name="menu_addPlacemark">Add a Placemark</string>
     <style name="Base.Theme.Placemark" parent="Theme.Material3.DayNight.NoActionBar">
         
         <item name="colorPrimary">@color/colorAccent</item>

@@ -19,6 +19,8 @@ class PlacemarkActivity : AppCompatActivity() {
         setContentView(binding.root)
         app = application as MainApp
 
+        setSupportActionBar(binding.toolbarAdd)
+
         binding.btnAdd.setOnClickListener {
             val placemark = PlacemarkModel(
                 title = binding.placemarkTitle.text.toString(),
@@ -38,6 +40,8 @@ class PlacemarkActivity : AppCompatActivity() {
 
             app.placemarks.add(placemark)
             i("Add Button Pressed: app.placemarks = ${app.placemarks}")
+            setResult(RESULT_OK)
+            finish()
         }
     }
 }
