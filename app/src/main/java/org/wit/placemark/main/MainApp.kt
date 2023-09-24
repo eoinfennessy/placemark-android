@@ -1,11 +1,11 @@
 package org.wit.placemark.main
 
 import android.app.Application
-import org.wit.placemark.models.PlacemarkModel
+import org.wit.placemark.models.PlacemarkMemStore
 import timber.log.Timber
 
 class MainApp: Application() {
-    val placemarks = mutableListOf<PlacemarkModel>()
+    val placemark = PlacemarkMemStore()
 
     override fun onCreate() {
         Timber.plant(Timber.DebugTree())

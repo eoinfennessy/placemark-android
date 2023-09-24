@@ -27,7 +27,7 @@ class PlacemarkListActivity : AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
-        binding.recyclerView.adapter = PlacemarkAdapter(app.placemarks)
+        binding.recyclerView.adapter = PlacemarkAdapter(app.placemark.findAll())
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -49,7 +49,7 @@ class PlacemarkListActivity : AppCompatActivity() {
         ActivityResultContracts.StartActivityForResult()
     ) {
         if (it.resultCode == RESULT_OK) {
-            binding.recyclerView.adapter?.notifyItemRangeChanged(0, app.placemarks.size)
+            binding.recyclerView.adapter?.notifyItemRangeChanged(0, app.placemark.getSize())
         }
     }
 }

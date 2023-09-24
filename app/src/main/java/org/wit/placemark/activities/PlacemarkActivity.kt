@@ -41,8 +41,8 @@ class PlacemarkActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            app.placemarks.add(placemark)
-            i("Add Button Pressed: app.placemarks = ${app.placemarks}")
+            app.placemark.create(placemark)
+            i("Add Button Pressed: app.placemarks = ${app.placemark.findAll()}")
             setResult(RESULT_OK)
             finish()
         }
