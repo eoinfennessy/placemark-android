@@ -3233,6 +3233,7 @@ int id invisible 0x7f0800e0
 int id inward 0x7f0800e1
 int id italic 0x7f0800e2
 int id item_add 0x7f0801f4
+int id item_cancel 0x7f0801f5
 int id item_touch_helper_previous_elevation 0x7f0800e3
 int id jumpToEnd 0x7f0800e4
 int id jumpToStart 0x7f0800e5
@@ -3698,6 +3699,7 @@ int layout select_dialog_item_material 0x7f0b0066
 int layout select_dialog_multichoice_material 0x7f0b0067
 int layout select_dialog_singlechoice_material 0x7f0b0068
 int layout support_simple_spinner_dropdown_item 0x7f0b0069
+int menu cancel_menu 0x7f130001
 int menu main_menu 0x7f130000
 int mipmap ic_launcher 0x7f0d0000
 int mipmap ic_launcher_round 0x7f0d0001
@@ -3791,6 +3793,7 @@ int string material_timepicker_pm 0x7f0f0054
 int string material_timepicker_select_time 0x7f0f0055
 int string material_timepicker_text_input_mode_description 0x7f0f0056
 int string menu_addPlacemark 0x7f0f00a2
+int string menu_cancel 0x7f0f00a3
 int string mtrl_badge_numberless_content_description 0x7f0f0057
 int string mtrl_checkbox_button_icon_path_checked 0x7f0f0058
 int string mtrl_checkbox_button_icon_path_group_name 0x7f0f0059

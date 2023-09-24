@@ -11,6 +11,7 @@ id appBarLayout
 id btnAdd
 id description
 id item_add
+id item_cancel
 id placemarkDescription
 id placemarkTitle
 id recyclerView
@@ -18,6 +19,7 @@ id toolbarAdd
 layout activity_placemark
 layout activity_placemark_list
 layout card_placemark
+menu cancel_menu
 menu main_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -26,6 +28,7 @@ string button_addPlacemark
 string hint_placemarkDescription
 string hint_placemarkTitle
 string menu_addPlacemark
+string menu_cancel
 style Base.Theme.Placemark
 style Theme.Placemark
 xml backup_rules
