@@ -1,5 +1,6 @@
 package org.wit.placemark.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -32,18 +33,19 @@ class PlacemarkActivity : AppCompatActivity() {
 
             if (placemark.validationErrors.isNotEmpty()) {
                 Snackbar
-                    .make(
-                        it,
-                        placemark.validationErrors.joinToString(separator = ";\n"),
-                        Snackbar.LENGTH_LONG
-                    )
+                    .make(it,
+                          placemark.validationErrors.joinToString(separator = ";\n"),
+                          Snackbar.LENGTH_LONG)
                     .show()
                 return@setOnClickListener
             }
 
-            app.placemark.create(placemark)
+            val newPlacemark = app.placemark.create(placemark)
             i("Add Button Pressed: app.placemarks = ${app.placemark.findAll()}")
-            setResult(RESULT_OK)
+            setResult(
+                RESULT_OK,
+                Intent().putExtra("placemark", newPlacemark)
+            )
             finish()
         }
     }

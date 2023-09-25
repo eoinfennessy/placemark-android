@@ -1,13 +1,12 @@
 package org.wit.placemark.models
 
 class PlacemarkMemStore(private val placemarks: MutableList<PlacemarkModel> = mutableListOf()) : PlacemarkStore {
-    override fun getSize() = placemarks.size
-
     override fun findAll(): List<PlacemarkModel> {
-        return placemarks
+        return placemarks.toMutableList()
     }
 
-    override fun create(placemark: PlacemarkModel) {
+    override fun create(placemark: PlacemarkModel): PlacemarkModel {
         placemarks.add(placemark)
+        return placemark
     }
 }

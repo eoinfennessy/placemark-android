@@ -11,23 +11,27 @@ import org.wit.placemark.R
 import org.wit.placemark.adapters.PlacemarkAdapter
 import org.wit.placemark.databinding.ActivityPlacemarkListBinding
 import org.wit.placemark.main.MainApp
-import timber.log.Timber
+import org.wit.placemark.models.PlacemarkModel
+import timber.log.Timber.i
 
 class PlacemarkListActivity : AppCompatActivity() {
     private lateinit var app: MainApp
     private lateinit var binding: ActivityPlacemarkListBinding
+    private lateinit var placemarks: MutableList<PlacemarkModel>
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        Timber.i("Starting PlacemarkList Activity")
+        i("Starting PlacemarkList Activity")
         super.onCreate(savedInstanceState)
         binding = ActivityPlacemarkListBinding.inflate(layoutInflater)
         setContentView(binding.root)
         app = application as MainApp
+        placemarks = app.placemark.findAll().toMutableList()
 
         setSupportActionBar(binding.toolbarAdd)
 
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
-        binding.recyclerView.adapter = PlacemarkAdapter(app.placemark.findAll())
+        binding.recyclerView.adapter = PlacemarkAdapter(placemarks)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -49,7 +53,10 @@ class PlacemarkListActivity : AppCompatActivity() {
         ActivityResultContracts.StartActivityForResult()
     ) {
         if (it.resultCode == RESULT_OK) {
-            binding.recyclerView.adapter?.notifyItemRangeChanged(0, app.placemark.getSize())
+            val placemark = it.data?.getParcelableExtra("placemark", PlacemarkModel::class.java)
+                ?: return@registerForActivityResult
+            placemarks.add(placemark)
+            binding.recyclerView.adapter?.notifyItemRangeChanged(0, placemarks.size)
         }
     }
 }
