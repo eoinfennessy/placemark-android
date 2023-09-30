@@ -9,12 +9,13 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.wit.placemark.R
 import org.wit.placemark.adapters.PlacemarkAdapter
+import org.wit.placemark.adapters.PlacemarkListener
 import org.wit.placemark.databinding.ActivityPlacemarkListBinding
 import org.wit.placemark.main.MainApp
 import org.wit.placemark.models.PlacemarkModel
 import timber.log.Timber.i
 
-class PlacemarkListActivity : AppCompatActivity() {
+class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
     private lateinit var app: MainApp
     private lateinit var binding: ActivityPlacemarkListBinding
     private lateinit var placemarks: MutableList<PlacemarkModel>
@@ -31,7 +32,7 @@ class PlacemarkListActivity : AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
-        binding.recyclerView.adapter = PlacemarkAdapter(placemarks)
+        binding.recyclerView.adapter = PlacemarkAdapter(placemarks, this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -57,6 +58,25 @@ class PlacemarkListActivity : AppCompatActivity() {
                 ?: return@registerForActivityResult
             placemarks.add(placemark)
             binding.recyclerView.adapter?.notifyItemRangeChanged(0, placemarks.size)
+        }
+    }
+
+    override fun onPlacemarkClick(placemark: PlacemarkModel) {
+        val launcherIntent = Intent(this, PlacemarkActivity::class.java)
+        launcherIntent.putExtra("placemark_edit", placemark)
+        getClickResult.launch(launcherIntent)
+    }
+
+    private val getClickResult = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val placemark = result.data?.getParcelableExtra("placemark", PlacemarkModel::class.java)
+                ?: throw Exception("Value of Parcelable 'placemark' is not of type PlacemarkModel")
+            val index = placemarks.indexOfFirst { it.id == placemark.id }
+            if (index == -1) throw Exception("No placemark with ID ${placemark.id} exists in 'placemarks'")
+            placemarks[index] = placemark
+            binding.recyclerView.adapter?.notifyItemChanged(index)
         }
     }
 }

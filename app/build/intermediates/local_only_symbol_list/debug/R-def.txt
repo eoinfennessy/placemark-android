@@ -29,6 +29,7 @@ string hint_placemarkDescription
 string hint_placemarkTitle
 string menu_addPlacemark
 string menu_cancel
+string update_placemark
 style Base.Theme.Placemark
 style Theme.Placemark
 xml backup_rules
