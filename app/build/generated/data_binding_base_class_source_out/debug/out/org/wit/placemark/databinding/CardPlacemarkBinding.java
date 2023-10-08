@@ -4,10 +4,12 @@ package org.wit.placemark.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
@@ -25,11 +27,20 @@ public final class CardPlacemarkBinding implements ViewBinding {
   @NonNull
   public final TextView placemarkTitle;
 
+  @NonNull
+  public final ConstraintLayout relativeLayout;
+
+  @NonNull
+  public final ImageView thumbnail;
+
   private CardPlacemarkBinding(@NonNull CardView rootView, @NonNull TextView description,
-      @NonNull TextView placemarkTitle) {
+      @NonNull TextView placemarkTitle, @NonNull ConstraintLayout relativeLayout,
+      @NonNull ImageView thumbnail) {
     this.rootView = rootView;
     this.description = description;
     this.placemarkTitle = placemarkTitle;
+    this.relativeLayout = relativeLayout;
+    this.thumbnail = thumbnail;
   }
 
   @Override
@@ -71,7 +82,20 @@ public final class CardPlacemarkBinding implements ViewBinding {
         break missingId;
       }
 
-      return new CardPlacemarkBinding((CardView) rootView, description, placemarkTitle);
+      id = R.id.relativeLayout;
+      ConstraintLayout relativeLayout = ViewBindings.findChildViewById(rootView, id);
+      if (relativeLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.thumbnail;
+      ImageView thumbnail = ViewBindings.findChildViewById(rootView, id);
+      if (thumbnail == null) {
+        break missingId;
+      }
+
+      return new CardPlacemarkBinding((CardView) rootView, description, placemarkTitle,
+          relativeLayout, thumbnail);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

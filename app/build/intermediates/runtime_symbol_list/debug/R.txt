@@ -3119,6 +3119,7 @@ int id chain2 0x7f08006f
 int id chains 0x7f080070
 int id checkbox 0x7f080071
 int id checked 0x7f080072
+int id chooseImage 0x7f0801f6
 int id chronometer 0x7f080073
 int id circle_center 0x7f080074
 int id clear_text 0x7f080075
@@ -3225,6 +3226,7 @@ int id ifRoom 0x7f0800d9
 int id ignore 0x7f0800da
 int id ignoreRequest 0x7f0800db
 int id image 0x7f0800dc
+int id imageIcon 0x7f0801f9
 int id immediateStop 0x7f0800dd
 int id included 0x7f0800de
 int id indeterminate 0x7f0800df
@@ -3344,6 +3346,7 @@ int id peekHeight 0x7f080150
 int id percent 0x7f080151
 int id pin 0x7f080152
 int id placemarkDescription 0x7f080153
+int id placemarkImage 0x7f0801f7
 int id placemarkTitle 0x7f080154
 int id position 0x7f080155
 int id postLayout 0x7f080156
@@ -3354,6 +3357,7 @@ int id radio 0x7f08015a
 int id ratio 0x7f08015b
 int id rectangles 0x7f08015c
 int id recyclerView 0x7f08015d
+int id relativeLayout 0x7f0801fa
 int id reverseSawtooth 0x7f08015e
 int id right 0x7f08015f
 int id rightToLeft 0x7f080160
@@ -3466,6 +3470,7 @@ int id textinput_helper_text 0x7f0801ca
 int id textinput_placeholder 0x7f0801cb
 int id textinput_prefix_text 0x7f0801cc
 int id textinput_suffix_text 0x7f0801cd
+int id thumbnail 0x7f0801f8
 int id time 0x7f0801ce
 int id title 0x7f0801cf
 int id titleDividerNoCustom 0x7f0801d0
@@ -3740,6 +3745,7 @@ int string bottomsheet_action_expand 0x7f100020
 int string bottomsheet_action_expand_halfway 0x7f100021
 int string bottomsheet_drag_handle_clicked 0x7f100022
 int string bottomsheet_drag_handle_content_description 0x7f100023
+int string button_addImage 0x7f1000a5
 int string button_addPlacemark 0x7f100024
 int string character_counter_content_description 0x7f100025
 int string character_counter_overflowed_content_description 0x7f100026
@@ -3861,10 +3867,12 @@ int string path_password_eye 0x7f100099
 int string path_password_eye_mask_strike_through 0x7f10009a
 int string path_password_eye_mask_visible 0x7f10009b
 int string path_password_strike_through 0x7f10009c
+int string placemark_thumbnail 0x7f1000a7
 int string search_menu_title 0x7f10009d
 int string searchbar_scrolling_view_behavior 0x7f10009e
 int string searchview_clear_text_content_description 0x7f10009f
 int string searchview_navigation_content_description 0x7f1000a0
+int string select_placemark_image 0x7f1000a6
 int string side_sheet_accessibility_pane_title 0x7f1000a1
 int string side_sheet_behavior 0x7f1000a2
 int string status_bar_notification_info_overflow 0x7f1000a3

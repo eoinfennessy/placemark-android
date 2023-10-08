@@ -1,9 +1,15 @@
 <resources>
     <string name="app_name">Placemark</string>
+    <string name="button_addImage"> Add Image </string>
     <string name="button_addPlacemark">Add Placemark</string>
     <string name="hint_placemarkTitle">Enter Placemark Title</string>
     <string name="hint_placemarkDescription">Enter Placemark Description</string>
     <string name="menu_addPlacemark">Add a Placemark</string>
     <string name="menu_cancel">Cancel</string>
     <string name="update_placemark">Update Placemark</string>
+    <string name="select_placemark_image">Select placemark image</string>
+    <string name="placemark_thumbnail">Placemark thumbnail</string>
+    <string name="update_image">Update image</string>
+    <string name="choose_a_different_image">Choose a different image</string>
+    <string name="placemark_image_content_description">An image of the placemark</string>
 </resources>

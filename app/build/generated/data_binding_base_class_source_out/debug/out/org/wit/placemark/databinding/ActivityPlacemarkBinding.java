@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -29,7 +30,13 @@ public final class ActivityPlacemarkBinding implements ViewBinding {
   public final Button btnAdd;
 
   @NonNull
+  public final Button chooseImage;
+
+  @NonNull
   public final EditText placemarkDescription;
+
+  @NonNull
+  public final ImageView placemarkImage;
 
   @NonNull
   public final EditText placemarkTitle;
@@ -38,13 +45,15 @@ public final class ActivityPlacemarkBinding implements ViewBinding {
   public final Toolbar toolbarAdd;
 
   private ActivityPlacemarkBinding(@NonNull ConstraintLayout rootView,
-      @NonNull AppBarLayout appBarLayout, @NonNull Button btnAdd,
-      @NonNull EditText placemarkDescription, @NonNull EditText placemarkTitle,
-      @NonNull Toolbar toolbarAdd) {
+      @NonNull AppBarLayout appBarLayout, @NonNull Button btnAdd, @NonNull Button chooseImage,
+      @NonNull EditText placemarkDescription, @NonNull ImageView placemarkImage,
+      @NonNull EditText placemarkTitle, @NonNull Toolbar toolbarAdd) {
     this.rootView = rootView;
     this.appBarLayout = appBarLayout;
     this.btnAdd = btnAdd;
+    this.chooseImage = chooseImage;
     this.placemarkDescription = placemarkDescription;
+    this.placemarkImage = placemarkImage;
     this.placemarkTitle = placemarkTitle;
     this.toolbarAdd = toolbarAdd;
   }
@@ -88,9 +97,21 @@ public final class ActivityPlacemarkBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.chooseImage;
+      Button chooseImage = ViewBindings.findChildViewById(rootView, id);
+      if (chooseImage == null) {
+        break missingId;
+      }
+
       id = R.id.placemarkDescription;
       EditText placemarkDescription = ViewBindings.findChildViewById(rootView, id);
       if (placemarkDescription == null) {
+        break missingId;
+      }
+
+      id = R.id.placemarkImage;
+      ImageView placemarkImage = ViewBindings.findChildViewById(rootView, id);
+      if (placemarkImage == null) {
         break missingId;
       }
 
@@ -107,7 +128,7 @@ public final class ActivityPlacemarkBinding implements ViewBinding {
       }
 
       return new ActivityPlacemarkBinding((ConstraintLayout) rootView, appBarLayout, btnAdd,
-          placemarkDescription, placemarkTitle, toolbarAdd);
+          chooseImage, placemarkDescription, placemarkImage, placemarkTitle, toolbarAdd);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

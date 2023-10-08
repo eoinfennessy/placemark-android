@@ -90,6 +90,14 @@
 54                android:value="androidx.startup" />
 54-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/eoin/.gradle/caches/transforms-3/2fedbf8c74c9edc50a1bd4976a1d5f3e/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
 55        </provider>
-56    </application>
-57
-58</manifest>
+56        <provider
+56-->[com.squareup.picasso:picasso:2.71828] /Users/eoin/.gradle/caches/transforms-3/80ea36d4bdcab67215b75a3e8445f969/transformed/picasso-2.71828/AndroidManifest.xml:8:9-11:40
+57            android:name="com.squareup.picasso.PicassoProvider"
+57-->[com.squareup.picasso:picasso:2.71828] /Users/eoin/.gradle/caches/transforms-3/80ea36d4bdcab67215b75a3e8445f969/transformed/picasso-2.71828/AndroidManifest.xml:9:13-64
+58            android:authorities="org.wit.placemark.com.squareup.picasso"
+58-->[com.squareup.picasso:picasso:2.71828] /Users/eoin/.gradle/caches/transforms-3/80ea36d4bdcab67215b75a3e8445f969/transformed/picasso-2.71828/AndroidManifest.xml:10:13-72
+59            android:exported="false" />
+59-->[com.squareup.picasso:picasso:2.71828] /Users/eoin/.gradle/caches/transforms-3/80ea36d4bdcab67215b75a3e8445f969/transformed/picasso-2.71828/AndroidManifest.xml:11:13-37
+60    </application>
+61
+62</manifest>

@@ -1,13 +1,18 @@
 package org.wit.placemark.activities
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
 import org.wit.placemark.R
 import org.wit.placemark.databinding.ActivityPlacemarkBinding
+import org.wit.placemark.helpers.showImagePicker
 import org.wit.placemark.main.MainApp
 import org.wit.placemark.models.PlacemarkModel
 import timber.log.Timber.i
@@ -15,13 +20,16 @@ import java.util.UUID
 
 class PlacemarkActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPlacemarkBinding
+    private lateinit var imageIntentLauncher : ActivityResultLauncher<Intent>
     private lateinit var app: MainApp
+    private var imageUri: Uri = Uri.EMPTY
 
     override fun onCreate(savedInstanceState: Bundle?) {
         i("Starting Placemark Activity")
         super.onCreate(savedInstanceState)
         binding = ActivityPlacemarkBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        registerImagePickerCallback()
         app = application as MainApp
 
         val isEditMode = intent.hasExtra("placemark_edit")
@@ -35,15 +43,27 @@ class PlacemarkActivity : AppCompatActivity() {
             binding.btnAdd.text = getString(R.string.update_placemark)
             binding.placemarkTitle.setText(placemark.title)
             binding.placemarkDescription.setText(placemark.description)
+            if (placemark.image != Uri.EMPTY) {
+                imageUri = placemark.image
+                binding.chooseImage.text = getString(R.string.update_image)
+                Picasso.get()
+                       .load(placemark.image)
+                       .into(binding.placemarkImage)
+            }
         }
 
         setSupportActionBar(binding.toolbarAdd)
+
+        binding.chooseImage.setOnClickListener {
+            showImagePicker(imageIntentLauncher)
+        }
 
         binding.btnAdd.setOnClickListener {
             val placemark = PlacemarkModel(
                 id = placemarkId ?: UUID.randomUUID().toString(),
                 title = binding.placemarkTitle.text.toString(),
-                description = binding.placemarkDescription.text.toString()
+                description = binding.placemarkDescription.text.toString(),
+                image = imageUri
             )
 
             val validationErrors = placemark.getValidationErrors()
@@ -83,5 +103,25 @@ class PlacemarkActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+    private fun registerImagePickerCallback() {
+        imageIntentLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult())
+            { result ->
+                when(result.resultCode) {
+                    RESULT_OK -> {
+                        val uri = result.data?.data
+                        if (uri == null) {
+                            i("Result contains a null image URI")
+                            return@registerForActivityResult
+                        }
+                        imageUri = uri
+                        Picasso.get()
+                            .load(uri)
+                            .into(binding.placemarkImage)
+                        binding.chooseImage.text = getString(R.string.choose_a_different_image)
+                    }
+                }
+            }
     }
 }
