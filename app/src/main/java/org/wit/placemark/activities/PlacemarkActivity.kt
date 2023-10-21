@@ -20,7 +20,8 @@ import java.util.UUID
 
 class PlacemarkActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPlacemarkBinding
-    private lateinit var imageIntentLauncher : ActivityResultLauncher<Intent>
+    private lateinit var imageIntentLauncher: ActivityResultLauncher<Intent>
+    private lateinit var mapIntentLauncher: ActivityResultLauncher<Intent>
     private lateinit var app: MainApp
     private var imageUri: Uri = Uri.EMPTY
 
@@ -30,6 +31,7 @@ class PlacemarkActivity : AppCompatActivity() {
         binding = ActivityPlacemarkBinding.inflate(layoutInflater)
         setContentView(binding.root)
         registerImagePickerCallback()
+        registerMapCallback()
         app = application as MainApp
 
         val isEditMode = intent.hasExtra("placemark_edit")
@@ -56,6 +58,11 @@ class PlacemarkActivity : AppCompatActivity() {
 
         binding.chooseImage.setOnClickListener {
             showImagePicker(imageIntentLauncher)
+        }
+
+        binding.placemarkLocation.setOnClickListener {
+            val launcherIntent = Intent(this, MapActivity::class.java)
+            mapIntentLauncher.launch(launcherIntent)
         }
 
         binding.btnAdd.setOnClickListener {
@@ -123,5 +130,11 @@ class PlacemarkActivity : AppCompatActivity() {
                     }
                 }
             }
+    }
+
+    private fun registerMapCallback() {
+        mapIntentLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult())
+            { i("Map loaded") }
     }
 }

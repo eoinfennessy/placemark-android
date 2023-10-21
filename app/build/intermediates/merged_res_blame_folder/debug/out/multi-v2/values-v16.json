@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "org.wit.placemark.app-mergeDebugResources-26:/values-v16/values-v16.xml",
+            "outputFile": "org.wit.placemark.app-mergeDebugResources-29:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/eoin/.gradle/caches/transforms-3/60c55cbef2e6cdef5b8f3b785c00f588/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
+                    "source": "/Users/eoin/.gradle/caches/transforms-3/7417c126a3ff0a349e7917234a55b49c/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/eoin/.gradle/caches/transforms-3/738147d0f85917708540e295877f94a3/transformed/core-1.9.0/res/values-v16/values-v16.xml",
+                    "source": "/Users/eoin/.gradle/caches/transforms-3/1019612bf39aa42563ef5fd8ea2122b1/transformed/core-1.9.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
