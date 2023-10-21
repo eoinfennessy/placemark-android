@@ -14,6 +14,7 @@ import org.wit.placemark.R
 import org.wit.placemark.databinding.ActivityPlacemarkBinding
 import org.wit.placemark.helpers.showImagePicker
 import org.wit.placemark.main.MainApp
+import org.wit.placemark.models.Location
 import org.wit.placemark.models.PlacemarkModel
 import timber.log.Timber.i
 import java.util.UUID
@@ -23,7 +24,8 @@ class PlacemarkActivity : AppCompatActivity() {
     private lateinit var imageIntentLauncher: ActivityResultLauncher<Intent>
     private lateinit var mapIntentLauncher: ActivityResultLauncher<Intent>
     private lateinit var app: MainApp
-    private var imageUri: Uri = Uri.EMPTY
+    private var location = Location()
+    private var imageUri = Uri.EMPTY
 
     override fun onCreate(savedInstanceState: Bundle?) {
         i("Starting Placemark Activity")
@@ -45,6 +47,7 @@ class PlacemarkActivity : AppCompatActivity() {
             binding.btnAdd.text = getString(R.string.update_placemark)
             binding.placemarkTitle.setText(placemark.title)
             binding.placemarkDescription.setText(placemark.description)
+            location = placemark.location
             if (placemark.image != Uri.EMPTY) {
                 imageUri = placemark.image
                 binding.chooseImage.text = getString(R.string.update_image)
@@ -62,6 +65,7 @@ class PlacemarkActivity : AppCompatActivity() {
 
         binding.placemarkLocation.setOnClickListener {
             val launcherIntent = Intent(this, MapActivity::class.java)
+            launcherIntent.putExtra("location", location)
             mapIntentLauncher.launch(launcherIntent)
         }
 
@@ -70,6 +74,7 @@ class PlacemarkActivity : AppCompatActivity() {
                 id = placemarkId ?: UUID.randomUUID().toString(),
                 title = binding.placemarkTitle.text.toString(),
                 description = binding.placemarkDescription.text.toString(),
+                location = location,
                 image = imageUri
             )
 
@@ -135,6 +140,20 @@ class PlacemarkActivity : AppCompatActivity() {
     private fun registerMapCallback() {
         mapIntentLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult())
-            { i("Map loaded") }
+            { result ->
+                when(result.resultCode) {
+                    RESULT_OK -> {
+                        val loc = result.data?.extras?.getParcelable("location", Location::class.java)
+                        if (loc == null) {
+                            i("Result contains a null location")
+                            return@registerForActivityResult
+                        }
+                        i("loc: $loc")
+                        location = loc
+                    }
+                    RESULT_CANCELED -> {}
+                    else -> {}
+                }
+            }
     }
 }
