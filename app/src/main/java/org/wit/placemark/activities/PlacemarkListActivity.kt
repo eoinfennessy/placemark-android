@@ -70,13 +70,25 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
     private val getClickResult = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        if (result.resultCode == RESULT_OK) {
-            val placemark = result.data?.getParcelableExtra("placemark", PlacemarkModel::class.java)
-                ?: throw Exception("Value of Parcelable 'placemark' is not of type PlacemarkModel")
-            val index = placemarks.indexOfFirst { it.id == placemark.id }
-            if (index == -1) throw Exception("No placemark with ID ${placemark.id} exists in 'placemarks'")
-            placemarks[index] = placemark
-            binding.recyclerView.adapter?.notifyItemChanged(index)
+        when (result.resultCode) {
+            RESULT_OK -> {
+                val placemark =
+                    result.data?.getParcelableExtra("placemark", PlacemarkModel::class.java)
+                        ?: throw Exception("Value of Parcelable 'placemark' is not of type PlacemarkModel")
+                val index = placemarks.indexOfFirst { it.id == placemark.id }
+                if (index == -1) throw Exception("No placemark with ID ${placemark.id} exists in 'placemarks'")
+                placemarks[index] = placemark
+                binding.recyclerView.adapter?.notifyItemChanged(index)
+            }
+            99 -> {
+                val placemark =
+                    result.data?.getParcelableExtra("deletedPlacemark", PlacemarkModel::class.java)
+                        ?: throw Exception("Value of Parcelable 'deletedPlacemark' is not of type PlacemarkModel")
+                val index = placemarks.indexOfFirst { it.id == placemark.id }
+                if (index == -1) throw Exception("No placemark with ID ${placemark.id} exists in 'placemarks'")
+                placemarks.removeAt(index)
+                binding.recyclerView.adapter?.notifyItemRemoved(index)
+            }
         }
     }
 }

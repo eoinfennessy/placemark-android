@@ -54,6 +54,12 @@ class PlacemarkJsonStore(private val context: Context) : PlacemarkStore {
         return placemark
     }
 
+    override fun delete(placemark: PlacemarkModel): Boolean {
+        val isRemoved = placemarks.remove(placemark)
+        if (isRemoved) { serialize() }
+        return isRemoved
+    }
+
     private fun serialize() {
         val jsonString = gsonBuilder.toJson(placemarks, listType)
         write(context, jsonFilename, jsonString)

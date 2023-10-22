@@ -21,4 +21,8 @@ class PlacemarkMemStore(private val placemarks: MutableList<PlacemarkModel> = mu
         placemarks[index] = placemark
         return placemark
     }
+
+    override fun delete(placemark: PlacemarkModel): Boolean {
+        return placemarks.remove(placemark)
+    }
 }

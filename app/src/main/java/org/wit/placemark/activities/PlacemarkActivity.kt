@@ -24,6 +24,7 @@ class PlacemarkActivity : AppCompatActivity() {
     private lateinit var imageIntentLauncher: ActivityResultLauncher<Intent>
     private lateinit var mapIntentLauncher: ActivityResultLauncher<Intent>
     private lateinit var app: MainApp
+    private var isEditMode = false
     private var location = Location()
     private var imageUri = Uri.EMPTY
 
@@ -36,7 +37,7 @@ class PlacemarkActivity : AppCompatActivity() {
         registerMapCallback()
         app = application as MainApp
 
-        val isEditMode = intent.hasExtra("placemark_edit")
+        isEditMode = intent.hasExtra("placemark_edit")
         var placemarkId: String? = null
 
         if (isEditMode) {
@@ -45,6 +46,7 @@ class PlacemarkActivity : AppCompatActivity() {
             placemarkId = placemark.id
             binding.toolbarAdd.title = "Update \"${placemark.title}\""
             binding.btnAdd.text = getString(R.string.update_placemark)
+            binding.placemarkLocation.text = getString(R.string.update_location)
             binding.placemarkTitle.setText(placemark.title)
             binding.placemarkDescription.setText(placemark.description)
             location = placemark.location
@@ -103,7 +105,8 @@ class PlacemarkActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.cancel_menu, menu)
+        menuInflater.inflate(R.menu.placemark_activity_menu, menu)
+        if (isEditMode) { menu?.getItem(0)?.isVisible = true }
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -111,6 +114,14 @@ class PlacemarkActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.item_cancel -> {
                 setResult(RESULT_CANCELED)
+                finish()
+            }
+            R.id.item_delete -> {
+                val placemark = intent.extras?.getParcelable("placemark_edit", PlacemarkModel::class.java)
+                    ?: throw Exception("Value of Parcelable 'placemark_edit' is not of type PlacemarkModel")
+                val isDeleted = app.placemarkStore.delete(placemark)
+                if (!isDeleted) { throw Exception("Placemark was not deleted: $placemark") }
+                setResult(99, Intent().putExtra("deletedPlacemark", placemark))
                 finish()
             }
         }

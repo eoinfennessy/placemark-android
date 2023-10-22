@@ -14,4 +14,6 @@
     <string name="placemark_image_content_description">An image of the placemark</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="button_location">Set Location</string>
+    <string name="menu_delete">Delete</string>
+    <string name="update_location">Update Location</string>
 </resources>
