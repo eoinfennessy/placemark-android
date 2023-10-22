@@ -60,7 +60,7 @@ class PlacemarkActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbarAdd)
 
         binding.chooseImage.setOnClickListener {
-            showImagePicker(imageIntentLauncher)
+            showImagePicker(imageIntentLauncher, this)
         }
 
         binding.placemarkLocation.setOnClickListener {
@@ -89,11 +89,11 @@ class PlacemarkActivity : AppCompatActivity() {
             }
 
             val newPlacemark = if (isEditMode) {
-                app.placemark.update(placemark)
+                app.placemarkStore.update(placemark)
             } else {
-                app.placemark.create(placemark)
+                app.placemarkStore.create(placemark)
             }
-            i("Add/Update Button Pressed: app.placemarks = ${app.placemark.findAll()}")
+            i("Add/Update Button Pressed: app.placemarks = ${app.placemarkStore.findAll()}")
             setResult(
                 RESULT_OK,
                 Intent().putExtra("placemark", newPlacemark)
@@ -127,6 +127,7 @@ class PlacemarkActivity : AppCompatActivity() {
                             i("Result contains a null image URI")
                             return@registerForActivityResult
                         }
+                        contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION)
                         imageUri = uri
                         Picasso.get()
                             .load(uri)

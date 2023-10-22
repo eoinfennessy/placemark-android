@@ -26,7 +26,7 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
         binding = ActivityPlacemarkListBinding.inflate(layoutInflater)
         setContentView(binding.root)
         app = application as MainApp
-        placemarks = app.placemark.findAll().toMutableList()
+        placemarks = app.placemarkStore.findAll().toMutableList()
 
         setSupportActionBar(binding.toolbarAdd)
 
